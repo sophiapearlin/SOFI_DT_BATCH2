@@ -20,9 +20,9 @@ public class CategoryTest {
 	   CategoryDAO categoryDAO = 	(CategoryDAO) context.getBean("categoryDAO");
 	   
 	   Category category = 	(Category) context.getBean("category");
-	   category.setId("CG123");
-	   category.setName("CGName123");
-	   category.setDescription("CGDesc123");
+	   category.setId("CG125");
+	   category.setName("CGName125");
+	   category.setDescription("CGDesc125");
 	   
 	   
 	   categoryDAO.saveOrUpdate(category);
