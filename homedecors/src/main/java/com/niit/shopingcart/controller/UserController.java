@@ -42,7 +42,10 @@ public class UserController {
 		return "home";
 	}
 
-	
+	@RequestMapping("productinfo")
+	public ModelAndView productinhome() {
+		return new ModelAndView("productinfo");
+	}
 
 	@RequestMapping("userhome")
 	public ModelAndView userHome() {

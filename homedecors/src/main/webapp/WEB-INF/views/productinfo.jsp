@@ -54,6 +54,7 @@
 
 
 </style>
+
 </head>
 <body background="resources/images/sssss4.jpg">
 
@@ -105,11 +106,11 @@
 					<td>${product.id}</td>
 					<td>${product.name}</td>
 					<td>${product.description}</td>
-					<td>${product.price}</td>
+					<td>Rs. ${product.price}</td>
 					<td>${product.category.name}</td>
 					<td>${product.supplier.name}</td>
 					<td><a href="<c:url value='productdetails/${product.id}' />">Details</a></td>
-					<td><a href="#">Buy</a></td>
+					<td><a href="<c:url value='usercart/${product.id}' />">Buy</a></td>
 				</tr>
 			</c:forEach>
 		</table>

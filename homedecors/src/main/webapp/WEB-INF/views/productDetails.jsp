@@ -6,6 +6,7 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
@@ -34,7 +35,7 @@
 </ul>
 <ul class="nav navbar-nav navbar-right">
  <li><a href="#"><span class="glyphicon glyphicon-user"></span>
-								${selectedUser_Details.name}</a></li>
+								Welcome User</a></li>
 								</ul>
 </div>
 </nav>
@@ -51,7 +52,10 @@
 </div>
 <div class="col-sm-2"></div>
 <div class="pull-left">
+
+
 <br/>
+
 		<c:if test="${!empty selectedProduct.name}">
 			<table>
 			<thead>
@@ -77,7 +81,7 @@
 					
 					<tr>
 					<th align="left" width="200">Price</th>
-					<td align="left" >${selectedProduct.price}</td>
+					<td align="left" >Rs.${selectedProduct.price}</td>
 					</tr>
 					
 							</tbody>
@@ -137,6 +141,7 @@
 					</tbody>
 			</table>
 		</c:if>
+		
 	</div>
 	<div class="col-sm-2"></div>
 	</div></div>

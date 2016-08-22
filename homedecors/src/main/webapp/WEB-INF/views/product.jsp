@@ -20,7 +20,10 @@
 	border-spacing: 0;
 	border-color: #ccc;
 }
-
+body{
+	  background: -moz-linear-gradient(right,#ffd39b, #8b7355,#ffd39b ); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right ,#ffd39b, #eec591,		#f4a460,#eec591,#ffd39b); /* Standard syntax */
+	  }
 .tg td {
 	font-family: Arial, sans-serif;
 	font-size: 14px;
@@ -48,9 +51,7 @@
 	background-color:#eecbad;
 }
 
-.tg .tg-4eph {
-	background-color: #f9f9f9
-}
+
 .btn {
 	background-color: #333;
 	color: #f1f1f1;
@@ -178,7 +179,7 @@
 					<td>${product.id}</td>
 					<td>${product.name}</td>
 					<td>${product.description}</td>
-					<td>${product.price}</td>
+					<td>Rs.${product.price}</td>
 					<td>${product.category.name}</td>
 					<td>${product.supplier.name}</td>
 					<td><a href="<c:url value='product/edit/${product.id}' />">Edit</a></td>

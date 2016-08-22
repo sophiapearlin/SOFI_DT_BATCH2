@@ -17,7 +17,7 @@
 <style type="text/css">
 
     body {
-	/*background-color:#ffffff;*/
+	
     background:-webkit-radial-gradient(	#d4d4d4,	#ffe7ba ,	#fa8072);/*Safari 5.1 to 6.0 */
 }
 
@@ -70,30 +70,8 @@
    						 </div>
    					 <ul class="nav navbar-nav">
     					<li class="active"><a href="home"><span class="glyphicon glyphicon-home"></span>Home</a></li>
-      					
-      					
-      					
-      					
-      					
-      					<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Categories <span class="caret"></span></a>
-      					<ul class="dropdown-menu">
-      					<c:forEach items="${categoryList}" var="category">
-			<li><a href=${category.name}>${category.name}</a>
-				<ul>
-					<c:forEach items="${category.products}" var="product">
-
-						<li><a href="views/productinfo.jsp">${product.name}</a></li>
-
-					</c:forEach>
-					</ul></li>
-					</c:forEach>
-					<hr color="red" size="5">
-	<br><br><br>
-	
-					
-					
-					</ul>
-					<li><a href="register"><span class="glyphicon glyphicon-user"></span> Register</a></li>
+      		
+					<li><a href="memberShip.obj"><span class="glyphicon glyphicon-user"></span> Register</a></li>
 					
      					<li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
     				

@@ -29,9 +29,11 @@ import com.google.gson.reflect.TypeToken;
 import com.niit.shopingcart.dao.CategoryDAO;
 import com.niit.shopingcart.dao.ProductDAO;
 import com.niit.shopingcart.dao.SupplierDAO;
+import com.niit.shopingcart.dao.UserDAO;
 import com.niit.shopingcart.model.Category;
 import com.niit.shopingcart.model.Product;
 import com.niit.shopingcart.model.Supplier;
+import com.niit.shopingcart.model.UserDetails;
 
 
 @Controller
@@ -45,8 +47,6 @@ public class ProductController {
 
 	@Autowired(required = true)
 	private SupplierDAO supplierDAO;
-
-
 
 	@RequestMapping(value = "/products", method = RequestMethod.GET)
 	public String listProducts(Model model) {
@@ -174,6 +174,24 @@ public class ProductController {
 		model.addAttribute("selectedProduct", this.productDAO.get(id));
 		
 		return "/productDetails";
+	
+	}
+	@RequestMapping("usercart/{id}")
+	public String cart(@PathVariable("id") String id, Model model) {
+		
+		model.addAttribute("selectedProduct", this.productDAO.get(id));
+		
+		
+		return "/cart";
+	
+	}
+	@RequestMapping("checkout/{id}")
+	public String checkout(@PathVariable("id") String id, Model model) {
+		
+		model.addAttribute("selectedProduct", this.productDAO.get(id));
+		
+		
+		return "/checkOut";
 	
 	}
 }

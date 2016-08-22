@@ -1,10 +1,14 @@
 package com.niit.shopingcart.model;
 
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
@@ -65,7 +69,10 @@ public class Product {
 	@ManyToOne
    @JoinColumn(name="supplier_id",nullable = false, updatable = false, insertable = false)
 	private Supplier supplier;
+	
 
+	
+	
 	@Column(name="id")
 	public String getId() {
 		return id;

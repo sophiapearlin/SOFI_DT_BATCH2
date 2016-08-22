@@ -18,7 +18,7 @@
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <style>
  body {
-	/*background-color:#ffffff;*/
+	
     background:-webkit-radial-gradient(	#d4d4d4,	#ffe7ba ,	#fa8072);/*Safari 5.1 to 6.0 */
 }
   .jumbotron {

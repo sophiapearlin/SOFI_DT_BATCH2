@@ -7,12 +7,24 @@
         http://www.springframework.org/schema/security/spring-security-3.2.xsd
 		http://www.springframework.org/schema/beans 
         http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
-	<http use-expressions="true">
+	<http  auto-config="true" use-expressions="true">
 		<intercept-url pattern="/login" access="permitAll" />
 		<intercept-url pattern="/logout" access="permitAll" />
 		<intercept-url pattern="/accessdenied" access="permitAll" />
-		<intercept-url pattern="/adminHome" access="hasRole('TRUE')" />
+
 		<intercept-url pattern="/userhome" access="hasRole('FALSE')" />
+		<intercept-url pattern="/viewproducts" access="hasRole('FALSE')" />
+		<intercept-url pattern="/adminHome" access="hasRole('TRUE')" />
+		<intercept-url pattern="/categories" access="hasRole('TRUE')" />
+		<intercept-url pattern="/suppliers" access="hasRole('TRUE')" />
+		<intercept-url pattern="/products" access="hasRole('TRUE')" />
+		<intercept-url pattern="/product" access="hasRole('TRUE')" />
+		<intercept-url pattern="/category" access="hasRole('TRUE')" />
+		<intercept-url pattern="/supplier" access="hasRole('TRUE')" />
+		<intercept-url pattern="/productDetails" access="hasRole('FALSE')" />
+		<intercept-url pattern="/productinfo" access="hasRole('FALSE')" />
+<intercept-url pattern="/usercart" access="hasRole('FALSE')" />
+<intercept-url pattern="/cart" access="hasRole('FALSE')" />
 
 		<form-login login-page="/login" login-processing-url="/j_spring_security_check"
 			authentication-success-handler-ref="myAuthenticationSuccessHandler"
@@ -20,7 +32,8 @@
 
 		<logout delete-cookies="JSESSIONID" logout-success-url="/logout" />
 		<access-denied-handler error-page="/accessdenied" />
-		<remember-me key="uniqueAndSecret" token-validity-seconds="86400" />
+		<!-- <remember-me key="uniqueAndSecret" token-validity-seconds="86400" 
+			/> -->
 
 	</http>
 
@@ -29,10 +42,11 @@
 
 	<authentication-manager>
 		<authentication-provider>
-			<user-service>
-				<user name="user" password="user" authorities="FALSE" />
-				<user name="niit" password="niit" authorities="TRUE" />
-			</user-service>
+
+			<jdbc-user-service data-source-ref="dataSource"
+				users-by-username-query="select id, password, true from user_details where id=?"
+				authorities-by-username-query="select u1.id, u1.admin from user_details u1 where u1.id =? " />
+
 		</authentication-provider>
 	</authentication-manager>
 

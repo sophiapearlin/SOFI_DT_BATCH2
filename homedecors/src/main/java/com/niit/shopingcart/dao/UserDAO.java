@@ -22,5 +22,4 @@ public interface UserDAO {
 	
 	public boolean isValidUser(String id, String name, boolean b);
 
-
 }

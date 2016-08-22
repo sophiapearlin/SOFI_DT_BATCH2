@@ -11,20 +11,15 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
-import org.springframework.jdbc.datasource.embedded.EmbeddedDatabase;
-import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
-import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import com.niit.shopingcart.dao.AccountDAO;
-import com.niit.shopingcart.dao.AccountDAOImpl;
+
 import com.niit.shopingcart.dao.CartDAO;
 import com.niit.shopingcart.dao.CartDAOImpl;
 import com.niit.shopingcart.dao.CategoryDAO;
 import com.niit.shopingcart.dao.CategoryDAOImpl;
-import com.niit.shopingcart.model.Account;
 import com.niit.shopingcart.model.Cart;
 import com.niit.shopingcart.model.Category;
 import com.niit.shopingcart.model.Product;
@@ -116,11 +111,6 @@ public class ApplicationContextConfig {
     	return new CartDAOImpl(sessionFactory);
     }
     
-    @Autowired
-    @Bean(name = "accountDAO")
-    public AccountDAO getAccountDao(SessionFactory sessionFactory) {   //returned CartDAO from this method ... error
-    	return new AccountDAOImpl(sessionFactory);
-    }
-
+  
 
 }

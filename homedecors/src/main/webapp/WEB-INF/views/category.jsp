@@ -48,9 +48,7 @@
 	background-color: #eecbad;
 }
 
-.tg .tg-4eph {
-	background-color: #f9f9f9
-}
+
 .btn {
 	background-color: #333;
 	color: #f1f1f1;
@@ -63,9 +61,10 @@
 	background-color: #fff;
 	color: #000;
 }
- body {
-	background-color:#ffe7ba;
-}
+  body{
+	  background: -moz-linear-gradient(right,#ffd39b, #8b7355,#ffd39b ); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right ,#ffd39b, #eec591,		#f4a460,#eec591,#ffd39b); /* Standard syntax */
+	  }
 </style>
 </head>
 <body>
